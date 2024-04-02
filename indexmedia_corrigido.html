@@ -10,26 +10,52 @@
     <link rel="stylesheet" href="teste.css">
   </head>
   <body>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <div>
+      <button onclick="playPause()">Play/Pause</button> 
+      <button onclick="makeBig()">Big</button>
+      <button onclick="makeSmall()">Small</button>
+      <button onclick="makeNormal()">Normal</button>
+      <br><br>
+      <video id="video1"
+        width="650"
+        controls
+        poster="midia/batman.jpeg">
+        <source src="midia/videobatman.mp4" type="video/mp4"/>
+  
+        <p> Seu Navegador Não Possui Suporte de Áudio. Aqui está um <a
+            href="https://example.com/video.mp4" download="video"> link para o
+            vídeo </a> em vez disso. </p>
+  
+      </video>
+      <br><br>
+      <button onclick="document.getElementById('video1').play()">Play</button>
+      <button onclick="document.getElementById('video1').pause()">Pause</button>
+    </div>
+   
 
-    <video id="video1"
-      width="650"
-      controls
-      poster="midia/batman.jpeg">
-      <source src="midia/videobatman.mp4" type="video/mp4"/>
-
-      <p> Seu Navegador Não Possui Suporte de Áudio. Aqui está um <a
-          href="https://example.com/video.mp4" download="video"> link para o
-          vídeo </a> em vez disso. </p>
-
-    </video>
-
-    <button onclick="document.getElementById('video1').play()">Play</button>
-    <button onclick="document.getElementById('video1').pause()">Pause</button>
-
-    <script src="x.js" async defer></script>
+    <!-- Uma forma mais elegante -->
+    <script> 
+      var myVideo = document.getElementById("video1"); 
+      
+      function playPause() { 
+        if (myVideo.paused) 
+          myVideo.play(); 
+        else 
+          myVideo.pause(); 
+      } 
+      
+      function makeBig() { 
+          myVideo.width = 560; 
+      } 
+      
+      function makeSmall() { 
+          myVideo.width = 320; 
+      } 
+      
+      function makeNormal() { 
+          myVideo.width = 420; 
+      } 
+      </script> 
   </body>
 </html>
 
